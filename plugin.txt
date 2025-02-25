@@ -1,0 +1,9 @@
+# Set VARIABLEs here to allow variation in your plugin
+
+VARIABLE rascube_target_name RASCUBE
+VARIABLE rascube_host_name host.docker.internal
+VARIABLE rascube_port 2945
+
+TARGET RASCUBE <%= rascube_target_name %>
+INTERFACE <%= rascube_target_name %>_INT openc3/interfaces/tcpip_client_interface.py <%= rascube_host_name %> <%= rascube_port %> <%= rascube_port %> 10.0 None LENGTH 8 8 2 1 BIG_ENDIAN 0 0x1072
+  MAP_TARGET <%= rascube_target_name %>
