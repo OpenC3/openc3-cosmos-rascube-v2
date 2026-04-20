@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
     This plugin adds the COSMOS target definition for the Robinson Aerospace Rascube V2.
   EOF
   s.license = 'MIT'
-  s.authors = ['Ryan Melton']
-  s.email = ['ryan@openc3.com']
+  s.authors = ['OpenC3, Inc.']
+  s.email = ['plugins@openc3.com']
   s.homepage = 'https://github.com/OpenC3/openc3-cosmos-rascube-v2'
   s.platform = Gem::Platform::RUBY
 
