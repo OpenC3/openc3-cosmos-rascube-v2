@@ -1,6 +1,6 @@
 TELEMETRY <%= target_name %> STATUS LITTLE_ENDIAN "Status Payload from the Rascube V2"
   APPEND_ID_ITEM PKT_ID 8 UINT 16 "Packet ID is 16 for status"
-  APPEND_ITEM LENGTH 8 UINT "Length field of payload expected to be 114 bytes"
+  APPEND_ITEM LENGTH 8 UINT "Length field of payload expected to be 121 bytes"
   APPEND_ITEM PACKET_NUM 32 UINT
   APPEND_ITEM MAIN_5V 16 UINT
     GENERIC_READ_CONVERSION_START FLOAT 32
@@ -147,3 +147,12 @@ TELEMETRY <%= target_name %> STATUS LITTLE_ENDIAN "Status Payload from the Rascu
   APPEND_ITEM TLM_VER 8 UINT
   APPEND_ITEM TRX_RSSI 32 FLOAT
   APPEND_ITEM TRX_SNR 32 FLOAT
+
+TELEMETRY <%= target_name %> DEVICE_STATUS LITTLE_ENDIAN "Device Status"
+  APPEND_ID_ITEM PKT_ID 8 UINT 0xF0 "Packet ID is 0xF0 for device status"
+  APPEND_ITEM LENGTH 8 UINT "Length field of payload expected to be 3 bytes"
+  APPEND_ITEM SOURCE 8 UINT
+    STATE ARDUINO_OBC 0
+    STATE STM_OBC 1
+    STATE USB_RECEIVER 2
+  APPEND_ITEM STATUS 16 UINT

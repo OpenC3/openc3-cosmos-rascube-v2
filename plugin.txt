@@ -9,6 +9,7 @@ VARIABLE rascube_stop_bits 1
 
 TARGET RASCUBE <%= rascube_target_name %>
 INTERFACE <%= rascube_target_name %>_INT openc3/interfaces/serial_interface.py <%= rascube_serial_port_name %> <%= rascube_serial_port_name %> <%= rascube_serial_baud_rate %> NONE <%= rascube_stop_bits %> 10.0 None
+  PROTOCOL READ_WRITE openc3/interfaces/protocols/length_protocol.py 8 8 2 1 LITTLE_ENDIAN
   BRIDGE_OPTION FLOW_CONTROL NONE
   BRIDGE_OPTION DATA_BITS 8
   BRIDGE <%= rascube_bridge %>
